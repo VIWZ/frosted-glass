@@ -293,7 +293,8 @@ background-color:#00000000  !important;
     margin-top: 0;
     margin-bottom: 16px;
     color: var(--b3-theme-on-primary);
-padding: 5px 0;
+    padding: 5px 0;
+    line-height: 1.4;
 }
 @font-face {
   font-family: "Noto Sans SC";
@@ -341,24 +342,9 @@ padding: 5px 0;
 a {
     outline: 0;
     text-decoration: none;
-    color: #2ae6e6;
+    color: #cbc5ff;
 }
-/* 关闭按钮（直接使用OnlyMe主题里的按钮） */
-.b3-dialog__close {
-    position: absolute;
-    cursor: pointer;
-    top: 0px;
-    right: -40px;
-    background-color: var(--MyOnly-setting-theme-color);
-    height: 20px;
-    width: 20px;
-    padding: 10px;
-    border-top-left-radius:3px;
-    border-bottom-left-radius:3px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    z-index: 0;
-}
+
 /*重命名的弹出菜单修改*/
 .b3-dialog__header {
     padding: 16px 24px;
@@ -418,7 +404,7 @@ fill:var(--b3-theme-on-primary);
     text-align: center;
 }
 .dock--vertical .dock__item:hover {
-    background-color: rgb(255 156 0 / 65%);
+    background-color: rgb(171 171 171 / 27%);
 }
 
 
@@ -490,6 +476,7 @@ fill:var(--b3-theme-on-primary);
     display: flex;
     flex-direction: column;
     color: black;
+    background-image: url(1.jpg);
 }
 .panelVditor .vditor-reset {
     font-size: 16px !important;
@@ -538,12 +525,30 @@ fill:var(--b3-theme-on-primary);
     border-radius: 9px;
     background-color: #40404030 !important;
     background-image: url(1.jpg);
+    border: 0px solid var(--b3-border-color);
 }
 .b3-menu__item:hover:not(.b3-menu__item--readonly):not(.b3-menu__item--custom) {
     background-color: #2b2b2b00 !important;
     box-shadow: rgb(0 0 0 / 32%) 3px 2px 5px 2px;
 }
-
+/*重命名的弹出菜单修改*/
+.b3-dialog__header {
+    padding: 16px 24px;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid var(--b3-border-color);
+    width: 500px;
+}
+/*菜单选择颜色修改*/
+option {
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+    background-color: #444444;
+}
 
 /*❗❗❗❗❗❗❗列表和文件树和页签的样式修改❗❗❗❗❗❗❗*/
 
@@ -554,43 +559,118 @@ fill:var(--b3-theme-on-primary);
     color: var(--b3-theme-on-primary);
 }
 
-
+.vditor-reset .b3-list, .vditor-reset .b3-list ul {
+    padding-left: 0;
+    font-size: 14px;
+}
 /*❗❗❗❗❗❗❗列表项样式*/
 .vditor-reset ul, .vditor-reset ol {
-    padding-top: 13px;
-    padding-bottom: 13px;
-    padding-right: 15px;
-    padding-left: 55px !important;
-    border: 3px solid rgb(255 255 255 / 18%);
-    box-shadow: rgb(0 0 0 / 32%) 0px 0px 2px 2px;
+    border: 0.3px solid rgb(255 255 255 / 18%);
+    box-shadow: rgb(0 0 0 / 24%) 0px 0px 2px 2px;
     border-radius: 9px;
     background-color: #04040400 !important;
     backdrop-filter: blur(10px);
-    margin-right: 2px !important;
+    line-height: 1.25;
+    padding-left: 55px;
+}
+.vditor ul ol, .vditor ol ol, .vditor ul ul, .vditor ol ul {
+    border-left: 3px solid rgba(255, 255, 255, 0.3) !important;
+    margin-left: -0.85em !important;
+    padding-left: 2.5em !important;
+    margin-bottom: 9px !important;
+}
+.vditor-reset ul ul ul {
+    list-style-type: square;
+    border: none;
+    box-shadow: none;
 }
 /*二级列表*/
-.vditor-reset blockquote:last-child, .vditor-reset pre:last-child, .vditor-reset ul:last-child, .vditor-reset ol:last-child, .vditor-reset hr:last-child {
-    margin-bottom: 0;
-    box-shadow: 0px -1px 9px 0px #ffffff00;
+.vditor-reset blockquote:last-child,  .vditor-reset ul:last-child, .vditor-reset ol:last-child, .vditor-reset hr:last-child {
+    box-shadow:0px 0px 0px 0px #ffffff00;
     border: solid 1px #fff0;
     -webkit-animation-name: none;
     border-radius: 0;
-    margin-left: -19px !important;
     background-color: transparent !important;
-    border-left: 3px solid rgb(255 255 255 / 63%) !important;
-    padding: 0 0 0 45px;
+
 }
+
+
 /*任务列表的图标的样式修改*/
 .vditor-task input {
     margin: 0 .5em .25em -1.6em;
     font-size: 75%;
     vertical-align: middle;
-    transform: scale(1.4);
+     transform: scale(0.8);
 }
 .vditor-reset ul,.vditor-reset ul:last-child {
     list-style-type: disc;
 }
+input[type=checkbox]:not(.b3-switch) {
+    -webkit-appearance: none;
+    position: relative;
+    height: 22px;
+    width: 22px;
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: rgb(62 59 59 / 13%) 0px 0px 1px 2px;
+    border: 0.1px solid rgb(255 255 255 / 99%);
+    transition: all 2s ease-in-out;
+}
 
+input[type="checkbox"]:not(.b3-switch):before {
+    left: 2px;
+    top: 6px;
+    width: 0;
+    height: 2px;
+    -webkit-transform: rotate(37deg);
+
+}
+input[type="checkbox"]:not(.b3-switch):checked:before {
+    left: 2px;
+    top: 12px;
+    width: 9px;
+    height: 2px;
+}
+input[type=checkbox]:checked:not(.b3-switch):after {
+    right: 6px;
+    bottom: 3px;
+    width: 2px;
+    height: 15px;
+}
+input[type=checkbox]:not(.b3-switch):after {
+    right: 9px;
+    bottom: 3px;
+    width: 2px;
+    height: 0;
+    -webkit-transform: rotate(26deg);
+    transition-delay: .2s;
+}
+input[type=checkbox]:not(.b3-switch):before, input[type=checkbox]:after {
+    position: absolute;
+    content: "";
+    background: #fff;
+    transition: all .2s ease-in-out;
+}
+input[type=checkbox]:not(.b3-switch):active{
+    transform: scale(2);
+    transition: all 0.45s linear;
+}
+
+
+
+
+li.vditor-task.vditor-task--done {
+    color: #ffff;
+    background-color: transparent;
+    text-decoration: line-through; 
+    opacity: 0.5;
+}
+.b3-switch:checked::after{
+    background-color:#fff;
+}
+.b3-switch:checked{
+    background-color:#4F7FA1;
+}
 /*列表行间距*/
 .vditor-reset li p {
     margin-bottom: 6px;
@@ -630,8 +710,7 @@ fill:var(--b3-theme-on-primary);
 .layout-tab-bar .item {
     margin-right: 0.5px;
     transition: all 000ms ease-in-out 0s;
-    border-radius: 9px;
-
+    border-radius: 15px;
 }
 /* 焦点页签样式 */
 .layout-tab-bar .item--focus {
@@ -639,8 +718,8 @@ fill:var(--b3-theme-on-primary);
 }
 .layout-tab-bar .item--focus {
     background-color: #2b2b2b00 !important;
-    border:2px outset #d2d2d257 !important;
-    box-shadow: rgb(0 0 0 / 32%) 1px -1px 5px 0px;
+    border: 1px outset #d2d2d29c !important;
+    box-shadow: rgb(0 0 0 / 47%) 1px 1px 5px 0px;
 }
 /* ❗❗❗❗❗❗❗文件树 */
 /*文件树字体采用思源字体*/
@@ -690,10 +769,9 @@ margin-left: 3px;
     position: relative;
     background-color: transparent;
     text-align: left;
-    border-radius: 11px;
+    border-radius: 15px;
     color:   var(--b3-theme-on-primary);
     margin:0 20px 0 20px;
-    transition: all 100ms ease-in-out 0s;
     margin-top: 7px !important;
     margin-bottom: 7px !important;
 }
@@ -701,6 +779,7 @@ margin-left: 3px;
     background-color: #2b2b2b00 !important;
     border: 2px outset #ada9a98c;
     box-shadow: rgb(0 0 0 / 32%) 3px 2px 5px 2px;
+    backdrop-filter: blur(5px);
 }
 .b3-list-item.b3-list-item--hide-action.b3-list-item--focus span:nth-child(2) {
     font-weight: 600;
@@ -774,8 +853,29 @@ margin-left: 3px;
     border-spacing: 0;
     border: 4px outset rgb(173 169 169 / 27%);
     box-shadow: rgb(0 0 0 / 32%) 4px 2px 5px 2px;
-    background-color: rgba(43, 43, 43, 0) !important;
+    background-color: rgba(43, 43, 43, 0.1) !important;
     backdrop-filter: blur(10px);
+    margin-right: -450px;
+}
+ /* 表格样式修改*/
+.vditor-reset table td, .vditor-reset table th {
+    padding: 6px 15px;
+    border: 1px solid rgb(255 255 255 / 19%);
+    word-break: normal;
+}
+.vditor-reset table th {
+    font-weight: 400;
+}
+.vditor-reset table tr {
+    background-color: #ffffff00;
+    border-top: 1px solid var(--b3-border-color);
+}
+.vditor-reset table tbody tr:nth-child(2n) {
+    background-color: #ffffff00;
+}
+.vditor-reset table tr th:last-child, .vditor-reset table tr td:last-child {
+}
+.vditor-reset table tr th:first-child, .vditor-reset table tr td:first-child {
 }
  /* 表格样式修改*/
 .vditor-reset table td, .vditor-reset table th {
@@ -804,6 +904,7 @@ blockquote {
     border-radius: 9px;
     box-shadow: rgb(0 0 0 / 32%) 0px 3px 6px 1px;
     background-color: #0404041a !important;
+    backdrop-filter: blur(10px);
 }
 
 
@@ -822,10 +923,14 @@ blockquote {
     background-size: 20px 20px;
     word-break: initial;
     word-wrap: normal;
-    border: 3px solid rgb(255 255 255 / 18%);
-    box-shadow: rgb(0 0 0 / 32%) 0px 0px 2px 2px;
+    border: 0.3px solid rgb(255 255 255 / 18%);
+    box-shadow: rgb(0 0 0 / 24%) 0px 0px 2px 2px;
     border-radius: 9px;
-    background-color: #0404041f !important;
+    backdrop-filter: blur(10px);
+    background-color: #04040400 !important;
+}
+.hljs-comment, .hljs-quote, .hljs-deletion, .hljs-meta {
+    color: #97b0ff !important;
 }
 /*标签的样式修改*/
 .vditor-ir__tag {
@@ -838,11 +943,12 @@ blockquote {
     text-align: center;
     color: #ffffff;
     font-family: Noto Sans SC;
-    padding: 2px 10px;
+    padding: 2px 14px;
     border: 2px solid rgb(255 255 255 / 18%);
     box-shadow: rgb(0 0 0 / 32%) 1px 1px 5px 2px;
-    border-radius: 20%;
+    border-radius: 23px;
     background-color: #04040400 !important;
+    backdrop-filter: blur(10px);
 }
 .vditor-ir__tag:hover {
     background-color: #d2d2d233!important;
@@ -856,9 +962,9 @@ blockquote {
     font-family: Noto Sans SC;
     display:table;
     color: var(--b3-theme-on-primary);
-    border: 2px solid rgb(255 255 255 / 15%);
+    border: 0.1px outset rgb(255 255 255 / 17%);
     border-radius: 0 9px 9px 0;
-    box-shadow: rgb(0 0 0 / 51%) 0px 0px 4px 1px;
+    box-shadow: rgb(0 0 0 / 29%) 1px 2px 3px 1px;
     padding-right: 50px;
 backdrop-filter: blur(10px);
 }
@@ -871,9 +977,9 @@ backdrop-filter: blur(10px);
     border-image: initial;
     padding-right: 50px;
     color: var(--b3-theme-on-primary);
-    border: 2px solid rgb(255 255 255 / 15%);
+    border: 0.1px outset rgb(255 255 255 / 17%);
     border-radius: 0 9px 9px 0;
-    box-shadow: rgb(0 0 0 / 51%) 0px 0px 4px 1px;
+    box-shadow: rgb(0 0 0 / 29%) 1px 2px 3px 1px;
     border-left: 10px solid rgb(57, 152, 109) !important;
 backdrop-filter: blur(10px);
 }
@@ -884,11 +990,11 @@ backdrop-filter: blur(10px);
     padding: 6px 50px 6px 20px;
     font-family: Noto Sans SC;
     padding-right: 50px;
-    box-shadow: rgb(0 0 0 / 51%) 0px 0px 4px 1px;
     display: table;
     color: var(--b3-theme-on-primary);
-    border: 2px solid rgb(255 255 255 / 15%);
+    border: 0.1px outset rgb(255 255 255 / 17%);
     border-radius: 0 9px 9px 0;
+    box-shadow: rgb(0 0 0 / 29%) 1px 2px 3px 1px;
 backdrop-filter: blur(10px);
 
 }
@@ -899,11 +1005,11 @@ backdrop-filter: blur(10px);
     font-family: "Noto Sans SC";
     display: table;
     border-image: initial;
-    border-left: 10px solid rgb(249, 132, 81) !important;
+    border-left: 10px solid #e09738 !important;
    color: var(--b3-theme-on-primary);
-    border: 2px solid rgb(255 255 255 / 15%);
+    border: 0.1px outset rgb(255 255 255 / 17%);
     border-radius: 0 9px 9px 0;
-    box-shadow: rgb(0 0 0 / 51%) 0px 0px 4px 1px;
+    box-shadow: rgb(0 0 0 / 29%) 1px 2px 3px 1px;
 backdrop-filter: blur(10px);
 }
 .vditor-reset h5 {
@@ -916,9 +1022,9 @@ backdrop-filter: blur(10px);
     display:table;
     padding-right: 50px;
     color: var(--b3-theme-on-primary);
-    border: 2px solid rgb(255 255 255 / 15%);
+    border: 0.1px outset rgb(255 255 255 / 17%);
     border-radius: 0 9px 9px 0;
-    box-shadow: rgb(0 0 0 / 51%) 0px 0px 4px 1px;
+    box-shadow: rgb(0 0 0 / 29%) 1px 2px 3px 1px;
 backdrop-filter: blur(10px);
 }
 
@@ -932,9 +1038,9 @@ backdrop-filter: blur(10px);
     display: table;
     padding-right: 50px;
     color: var(--b3-theme-on-primary);
-    border: 2px solid rgb(255 255 255 / 15%);
+    border: 0.1px outset rgb(255 255 255 / 17%);
     border-radius: 0 9px 9px 0;
-    box-shadow: rgb(0 0 0 / 51%) 0px 0px 4px 1px;
+    box-shadow: rgb(0 0 0 / 29%) 1px 2px 3px 1px;
 backdrop-filter: blur(10px);
 }
 .vditor-reset h1, .vditor-reset h2, .vditor-reset h3, .vditor-reset h4, .vditor-reset h5, .vditor-reset h6 {
@@ -946,27 +1052,28 @@ backdrop-filter: blur(10px);
 /*❗❗❗❗❗❗❗小的细节调整❗❗❗❗❗❗❗*/
 /*加粗样式修改*/
 .vditor-reset strong {
-    color: #000000 !important;
+    color: #ffffff !important;
 }
 /*修改了链接样式*/
 .vditor-ir__link {
-    color: rgb(0 255 208);
+    color: rgb(0 255 208 / 53%);
     text-decoration: unset;
+}
+.vditor-ir__link:hover {
+    border-bottom: solid 2px rgb(0 255 208 / 53%);
 }
 /*修改拖动时显示的阴影部分粗细*/
 .fn__flex-column  .dragover__bottom{
-box-shadow: 0 5px 0 rgb(49 157 249 / 73%);
+box-shadow: 0 5px 0 #ffffff36;
 }
 .fn__flex-column  .dragover__top{
-box-shadow: 0 5px 0 rgb(49 157 249 / 73%);
+box-shadow: 0 5px 0 #ffffff36;
 }
 .fn__flex-column  .dragover{
-background-color:rgb(49 157 249 / 73%) !important;
+background-color:#ffffff36 !important;
 }
 
-.vditor-ir__link:hover {
-    border-bottom: solid 2px rgb(0 255 208);
-}
+
 /*分割线样式修改 */
 .vditor-reset hr {
     height: 1px;
@@ -985,5 +1092,18 @@ background-color:rgb(49 157 249 / 73%) !important;
 .b3-text-filed, .pcr-app .pcr-interaction .pcr-result {
     background-color: #00000000;
 }
-/**/
-
+/*修改引用小按钮*/
+.vditor-ir__menu span {
+    font-size: 12px;
+    color: rgb(255 255 255);
+    background-color: #98989842;
+    height: 14px;
+    min-width: 14px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 14px;
+    white-space: nowrap;
+    position: absolute;
+    transition: var(--b3-transition);
+    transform: scale(1.3);
+}
